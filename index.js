@@ -25,8 +25,7 @@ const downloadRoute = async (client, routeId) => {
 
 const tokens = await strava.oauth.refreshToken(process.env.STRAVA_REFRESH_TOKEN);
 const client = new strava.client(tokens.access_token);
-const routes = await client.athlete.listRoutes({ id: process.env.STRAVA_ATHLETE_ID });
-
+const routes = await client.athlete.listRoutes({ id: process.env.STRAVA_ATHLETE_ID, per_page: 100 });
 await fs.mkdir(process.env.STORAGE_PATH, { recursive: true });
 
 for (const { type, name, id_str } of routes) {
