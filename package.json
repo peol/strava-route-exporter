@@ -10,7 +10,6 @@
   "type": "module",
   "description": "",
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "strava-v3": "^2.2.0"
+    "dotenv": "^16.4.5"
   }
 }
